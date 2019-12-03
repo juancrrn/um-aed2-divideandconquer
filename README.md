@@ -243,33 +243,7 @@ funcion generarCadena(entero longitudMaxima): cadena {
 
 _(6) Contraste del estudio teórico y el experimental, buscando justificación a las discrepancias entre los dos estudios._
 
-Previamente a poner en común los resultados de los estudios teórico y experimental, ejecutamos los generaciones de casos de prueba. Fijamos la `n` en un rango de $10 000$ a $100 000$ y la `m` en dos valores, $100$ y $1000$, para poder realizar la representación gráfica en dos dimensiones.
-
-Recogemos los datos de tiempo experimentales ($t_{X_m}(n, 100)$, $t_{X_m}(n, 1000)$, $t_{X_M}(n, 100)$, $t_{X_M}(n, 1000)$, $t_{X_p}(n, 100)$ y $t_{X_p}(n, 1000)$), en varias gráficas y los superponemos con el orden teórico obtenido para $ t(n,m) \in O(mn - m^2) $. Este orden lo representamos con la función `T` que corresponde al mismo con una constante multiplicativa para ajustar la altura de la función al tiempo experimental.
-
-Destacar que, en cada una de las siguientes gráficas, la escala de tiempo de ejecución es diferente, pero la función `T` que da el orden es la misma en todos los casos.
-
-#### 7.1. Contraste teórico-experimental de caso mejor
-
-A continuación presentamos una gráfica con la representación de los tiempos de ejecución experimentales $t_{X_m}(n, 100)$, $t_{X_m}(n, 1000)$ y teóricos $t(n, 100) \in O(100n - 10000)$, $t(n, 1000) \in O(1000n - 1000000)$.
-
-_Imagen no disponible_
-
-#### 7.2. Contraste teórico-experimental de caso peor
-
-A continuación presentamos una gráfica con la representación de los tiempos de ejecucióne experimentales $t_{X_M}(n, 100)$, $t_{X_M}(n, 1000)$ y teóricos $t(n, 100) \in O(100n - 10000)$, $t(n, 1000) \in O(1000n - 1000000)$.
-
-_Imagen no disponible_
-
-#### 7.3. Contraste teórico-experimental de caso promedio
-
-A continuación presentamos una gráfica con la representación de los tiempos de ejecución experimentales $t_{X_p}(n, 100)$, $t_{X_p}(n, 1000)$ y teóricos $t(n, 100) \in O(100n - 10000)$, $t(n, 1000) \in O(1000n - 1000000)$.
-
-_Imagen no disponible_
-
-#### 7.4. Contraste teórico-experimental general
-
-La conclusión sobre el contraste de los estudios teórico y experimental del tiempo de ejecución es que el orden obtenido, $O(nm - m^2)$, representa, como esperábamos, una cota superior del tiempo de ejecución real del algoritmo. Esto nos permite saber qué recursos máximos va a necesitar el algoritmo para ejecutarse.
+_En `Memoria.pdf`, ya que Markdown de GitHub no admite LaTeX._
 
 ### 8. Conclusiones
 
