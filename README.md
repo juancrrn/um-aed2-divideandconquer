@@ -148,59 +148,7 @@ En el programa principal, adaptado para resolver los casos de prueba, se definen
 _(2) Estudio teórico del tiempo de ejecución del algoritmo (t<sub>m</sub>, t<sub>M</sub> y t<sub>p</sub>) y obtención de conclusiones acerca de los órdenes._
 El tiempo de ejecución del algoritmo se ha estudiado a partir del planteamiento en pseudocódigo. Para simplificarlo, hemos dividido el análisis en varias partes correspondientes a los distintos métodos.
 
-En el algoritmo diseñado, los tiempos de ejecución pueden depender de `n=longitud(A)`, de `m` y del contenido de `A`, es decir, la entrada de datos. En los casos en los que el tiempo de ejecución dependa de la entrada de datos, el tiempo promedio se calcula a través de la probabilidad de los casos mejor y peor.
-
-En el conteo de instrucciones, establecemos las siguientes consideraciones:
-
-- Asignaciones constantes, _+1_.
-- Comprobación del `si` (`if`), incluido el `si_no` (`else`), _+1_.
-- Comprobación del `para` (`for`) (dentro del bucle), _+1_.
-- Inicialización e incremento del `para` (`for`), _+0_.
-- Reserva del tipo abstracto de datos `Solucion`, _+2_.
-
-#### 3.1. Tiempo de ejecución para SolucionDirecta
-
-En el caso de la función `SolucionDirecta`, el tiempo de ejecución, $t_{SD}$ depende de la entrada de datos, por lo que estudiamos los casos mejor, $t_{SD_m}$; peor, $t_{SD_M}$; y promedio, $t_{SD_p}$.
-
-$$t_{SD_m}(n,m) = 2 + \sum_{i=0}^{n-m} (3) + 4 = 3n - 3m + 8$$
-
-$$t_{SD_M}(n,m) = 2 + \sum_{i=0}^{n-m} (3 + \sum_{j=0}^{m} (2) + 1) + 2 + 4 = 2mn - 2m^2 - 4m +6n + 14$$
-
-$$t_{SD_p}(n,m) = 2 + \sum_{i=0}^{n-m} (3 + (1 - \frac{n-m}{n-m+1} \frac{25}{26}) ( \sum_{j=0}^{m} ( 2 + \frac{1}{26} 1 ) + 1 + (\frac{1}{26})^2 2) ) + 2 + 4$$
-
-Aunque se ha hecho en papel, no se da una simplificación de $t_{SD_p}(n,m)$ por aproximarse a $t_{SD_m}$, lo cual se expresará en la conclusión final.
-
-Nótese que el término $(1 - \frac{n-m}{n-m+1} \frac{25}{26})$ corresponde a la probabilidad de que se cumpla la condición de la instrucción `si (A[i] = C) o (i = longitud(A) - m)` calculada a través de las \textit{leyes de De Morgan}.
-
-El término $\frac{1}{26}$ corresponde a la probabilidad de que se cumpla la condición de la instrucción `si A[i + j] = C`. Por último, el término $(\frac{1}{26})^2$ corresponde a la probabilidad de que se cumpla la condición de la instrucción `si apariciones > maximoApariciones`.
-
-La conclusión obtenida es la siguiente:
-
-$$ t_{SD} \in O(mn - m^2) $$
-
-#### 3.2. Tiempo de ejecución para Pequeno
-
-En el caso de la función `Pequeno`, observamos que el tiempo de ejecución, $t_Q$, es siempre el mismo, independientemente de la entrada de datos. La ejecución de este método se realiza en orden constante:
-
-$$t_Q(n,m) \in O(1)$$
-
-#### 3.3. Tiempo de ejecución para Combinar
-
-En el caso de la función `Combinar`, el tiempo de ejecución, $t_C$ depende de la entrada de datos en una sola asignación constante, por lo que estudiamos solamente el caso general. La conclusión obtenida es la siguiente:
-
-$$t_C(n,m) \in O(t_{SD}(n,m))$$
-
-#### 3.4. Tiempo de ejecución para DivideVenceras y general
-
-En el caso de la función `DivideVenceras`, el tiempo de ejecución, $t_{DV}$ no depende de la entrada de datos, por lo que estudiamos solamente el caso general. Este tiempo de ejecución combina los tiempos de ejecución de todos los métodos, siendo así el general para el algoritmo, $t$. Tratándose de un sistema con ecuación de recurrencia, separamos varios casos en la definición del tiempo de ejecución.
-
-_Gráfico no disponible_
-
-Para resolver la ecuación de recurrencia con dos parámetros, extraemos la `m` como constante y la fijamos a dos valores, $100$ y $1000$, los mismos que utilizaremos para la experimentación. Obtenemos estos resultados, que nos llevan a las conclusiones finales.
-
-_Gráfico no disponible_
-
-Como conclusión, observamos que el algoritmo de divide y vencerás consigue resolver el problema en un tiempo de orden igual al algoritmo de resolución directa.
+_En `Memoria.pdf`, ya que Markdown de GitHub no admite LaTeX._
 
 ### 4. Implementación
 
