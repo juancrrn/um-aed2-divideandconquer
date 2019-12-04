@@ -162,7 +162,7 @@ El tipo `Solucion` se implementa como una clase de C++ con dos atributos corresp
 
 Destacamos la inicialización del parámetro `posicionRelativa` del método `DivideVenceras`, que en la implementación se denomina `ini` y que se sobrecarga en la cabecera de dicho método. En las operaciones matemáticas de división, especialmente en la creación de los subproblemas, se utiliza una aproximación en los casos en que la `n` sea impar.
 
-_Archivo main.cpp_
+_Archivo `main.cpp`_
 
 ### 5. Validación del diseño
 
